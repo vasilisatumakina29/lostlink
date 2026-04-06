@@ -31,13 +31,16 @@ def home(
     search: str | None = None,
 ):
     normalized_item_type = item_type if item_type in {member.value for member in ItemType} else None
-    normalized_status = status_filter if status_filter in {member.value for member in ItemStatus} else None
+    normalized_status = (
+        status_filter
+        if status_filter in {member.value for member in ItemStatus}
+        else ItemStatus.OPEN.value
+    )
 
     query = select(Item).order_by(Item.created_at.desc())
     if normalized_item_type:
         query = query.where(Item.item_type == ItemType(normalized_item_type))
-    if normalized_status:
-        query = query.where(Item.status == ItemStatus(normalized_status))
+    query = query.where(Item.status == ItemStatus(normalized_status))
     if search:
         like_pattern = f"%{search.strip()}%"
         query = query.where(Item.title.ilike(like_pattern) | Item.description.ilike(like_pattern))
@@ -49,7 +52,7 @@ def home(
             "request": request,
             "items": items,
             "item_type": normalized_item_type or "",
-            "status_filter": normalized_status or "",
+            "status_filter": normalized_status,
             "search": search or "",
         },
     )
