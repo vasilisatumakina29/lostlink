@@ -105,15 +105,3 @@ Ubuntu 24.04
 
    - App: `http://<VM_IP>:8000`
    - API docs: `http://<VM_IP>:8000/docs`
-
-6. If needed, inspect logs:
-
-   ```bash
-   docker compose logs -f
-   ```
-
-7. Stop the deployment:
-
-   ```bash
-   docker compose down
-   ```
