@@ -79,8 +79,8 @@ Ubuntu 24.04
 1. Clone the repository:
 
    ```bash
-   git clone <YOUR_GITHUB_REPO_URL> lostlink
-   cd lostlink
+   git clone https://github.com/vasilisatumakina29/se-toolkit-hackathon.git
+   cd se-toolkit-hackathon
    ```
 
 2. Create an environment file:
@@ -103,5 +103,5 @@ Ubuntu 24.04
 
 5. Open the application in a browser:
 
-   - App: `http://<VM_IP>:8000`
-   - API docs: `http://<VM_IP>:8000/docs`
+   - App: `http://10.93.25.147:8000/`
+   - API docs: `http://10.93.25.147:8000/docs`
