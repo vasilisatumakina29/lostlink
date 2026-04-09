@@ -318,6 +318,10 @@ textarea {
     color: var(--text);
 }
 
+input[type="file"] {
+    padding: 0.75rem 0.95rem;
+}
+
 input:focus,
 select:focus,
 textarea:focus {
@@ -380,10 +384,30 @@ textarea:focus {
     color: var(--muted);
 }
 
+.field-help {
+    margin: 0.5rem 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
 .detail-grid {
     display: grid;
     grid-template-columns: 1.3fr 0.9fr;
     gap: 1.2rem;
+}
+
+.detail-image-section {
+    margin: 1.5rem 0;
+}
+
+.detail-image {
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface-muted);
 }
 
 .error-box {
